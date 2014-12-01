@@ -121,4 +121,16 @@ jQuery(document).ready(function($) {
         $(this).children('.sub-menu').slideUp(200);
     }
   ); */
+  
+  // Function
+	function selectThis(id) {
+		//Off to a fine start, could search the DOM Element and do a .each function on the divs inside, or just hide all of that class...
+		$('.TextContainer').hide();
+		// ID of Body plus whatever param we pass down,
+		$('#Body_' + id).fadeIn(500);
+		//Remove that pesky selected from all
+		$('.HeaderButton').removeClass('HeaderButtonSelected');
+		// And add to the now selected one
+		$('#Button_' + id).addClass('HeaderButtonSelected');
+	}
 }); /* end of as page load scripts */
