@@ -1938,8 +1938,6 @@ mobile. Make sure to double check these!
       background-color: #7ea088; }
     .resource-nav li.current-menu-item ul.sub-menu, .resource-nav li.current-menu-item ul.children, .resource-nav li.current_page_item ul.sub-menu, .resource-nav li.current_page_item ul.children, .resource-nav li.current_page_ancestor ul.sub-menu, .resource-nav li.current_page_ancestor ul.children {
       display: block; }
-  .sidebar {
-    margin-top: 2.2em; }
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em; }

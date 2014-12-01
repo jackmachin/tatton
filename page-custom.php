@@ -27,7 +27,7 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
- <div id="SelectContainer">
+ <div id="SelectContainer entry-content">
                   <?php
  
 // check if the repeater field has rows of data
@@ -53,7 +53,7 @@ endif;
  	// loop through the rows of data
     while ( have_rows('section') ) : the_row(); ?>
 
-<div class="TextContainer" id="Body_<?php the_sub_field ('id');?>">
+<div class="TextContainer entry-content" id="Body_<?php the_sub_field ('id');?>">
 <?php the_sub_field ('content');?>
 </div>
 
