@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<div id="content" class="wrapper">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content" class="container">
 
 					<div id="main"  role="main">
 
@@ -20,7 +20,7 @@
 
 							</section>
 
-							<section class="search">
+							<section class="search entry-content">
 
 									<p><?php get_search_form(); ?></p>
 
