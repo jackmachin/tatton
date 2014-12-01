@@ -18,6 +18,8 @@
 			<div id="content" class="wrapper">
 
 				<div id="inner-content" class="container">
+        
+            <?php get_sidebar('resource'); ?>
 
 						<div class="main"  role="main">
 
@@ -75,8 +77,6 @@
 							<?php endif; ?>
 
 						</div>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 
