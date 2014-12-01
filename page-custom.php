@@ -27,46 +27,47 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								<header class="article-header">
+ <div id="SelectContainer">
+                  <?php
+ 
+// check if the repeater field has rows of data
+if( have_rows('section') ):
+ 
+ 	// loop through the rows of data
+    while ( have_rows('section') ) : the_row(); ?>
 
-									<h1 class="page-title"><?php the_title(); ?></h1>
+        <a class="box <?php the_sub_field ('class_w');?>  <?php the_sub_field ('class_p');?> h2" onclick="selectThis('<?php the_sub_field ('id');?>')" href="javascript:void(0)"><?php the_sub_field('heading');?></a>
 
-								</header>
+    <?php endwhile;
+ 
+else :
+ 
+    // no rows found
+ 
+endif;
+ 
+// check if the repeater field has rows of data
+?>         <div class="TextBodyContainer">
+<?php if( have_rows('section') ):
+ 
+ 	// loop through the rows of data
+    while ( have_rows('section') ) : the_row(); ?>
 
-								<div class="entry-content cf" itemprop="articleBody">
-									<?php
-										// the content (pretty self explanatory huh)
-										the_content();
+<div class="TextContainer" id="Body_<?php the_sub_field ('id');?>">
+<?php the_sub_field ('content');?>
+</div>
 
-										/*
-										 * Link Pages is used in case you have posts that are set to break into
-										 * multiple pages. You can remove this if you don't plan on doing that.
-										 *
-										 * Also, breaking content up into multiple pages is a horrible experience,
-										 * so don't do it. While there are SOME edge cases where this is useful, it's
-										 * mostly used for people to get more ad views. It's up to you but if you want
-										 * to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
-										 *
-										 * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
-										 *
-										*/
-										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-											'after'       => '</div>',
-											'link_before' => '<span>',
-											'link_after'  => '</span>',
-										) );
-									?>
-								</div>
-
-
-								<footer class="article-footer">
-
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-								</footer>
-
-								<?php comments_template(); ?>
+    <?php endwhile;
+ 
+else :
+ 
+    // no rows found
+ 
+endif;
+ 
+?>
+</div>
+      </div>
 
 							</article>
 
