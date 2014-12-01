@@ -102,6 +102,18 @@ function loadGravatars() {
 } // end function
 
 
+// Function
+	function selectThis(id) {
+		//Off to a fine start, could search the DOM Element and do a .each function on the divs inside, or just hide all of that class...
+		jQuery('.TextContainer').hide();
+		// ID of Body plus whatever param we pass down,
+		jQuery('#Body_' + id).fadeIn(500);
+		//Remove that pesky selected from all
+		jQuery('.HeaderButton').removeClass('HeaderButtonSelected');
+		// And add to the now selected one
+		jQuery('#Button_' + id).addClass('HeaderButtonSelected');
+	}
+  
 /*
  * Put all your regular jQuery in here.
 */
@@ -122,15 +134,4 @@ jQuery(document).ready(function($) {
     }
   ); */
   
-  // Function
-	function selectThis(id) {
-		//Off to a fine start, could search the DOM Element and do a .each function on the divs inside, or just hide all of that class...
-		$('.TextContainer').hide();
-		// ID of Body plus whatever param we pass down,
-		$('#Body_' + id).fadeIn(500);
-		//Remove that pesky selected from all
-		$('.HeaderButton').removeClass('HeaderButtonSelected');
-		// And add to the now selected one
-		$('#Button_' + id).addClass('HeaderButtonSelected');
-	}
 }); /* end of as page load scripts */
