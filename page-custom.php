@@ -27,7 +27,7 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
- <div id="SelectContainer entry-content">
+ <div id="SelectContainer" class="entry-content">
                   <?php
  
 // check if the repeater field has rows of data
